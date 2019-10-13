@@ -1,8 +1,10 @@
 package com.noob.apps.mvvmcountries.viewmodels
 
 import android.content.Context
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.noob.apps.mvvmcountries.interfaces.NetworkResponseCallback
 import com.noob.apps.mvvmcountries.models.Country
 import com.noob.apps.mvvmcountries.repositories.CountriesRepository
@@ -34,5 +36,9 @@ class CountryListViewModel : ViewModel() {
             mShowNetworkError.value = true
         }
         return mList
+    }
+
+    fun onRefreshClicked(view : View){
+        fetchCountriesFromServer(view.context, true)
     }
 }
