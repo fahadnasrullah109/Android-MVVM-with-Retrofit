@@ -10,8 +10,9 @@ import com.noob.apps.mvvmcountries.databinding.CountriesListItemBinding
 import com.noob.apps.mvvmcountries.models.Country
 import kotlinx.android.extensions.LayoutContainer
 
-class CountriesListAdapter(private var mList: List<Country>? = listOf()) :
-    RecyclerView.Adapter<CountriesListAdapter.ViewHolder>() {
+class CountriesListAdapter : RecyclerView.Adapter<CountriesListAdapter.ViewHolder>() {
+
+    private var mList: List<Country>? = listOf()
 
     fun setData(list: List<Country>) {
         mList = list

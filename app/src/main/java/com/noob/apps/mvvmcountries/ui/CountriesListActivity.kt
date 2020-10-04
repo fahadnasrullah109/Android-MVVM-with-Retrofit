@@ -34,7 +34,7 @@ class CountriesListActivity : AppCompatActivity() {
     }
 
     private fun initializeRecyclerView() {
-        mAdapter = CountriesListAdapter(mViewModel.getCountriesList().value)
+        mAdapter = CountriesListAdapter()
         mActivityBinding.recyclerView.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
@@ -62,6 +62,6 @@ class CountriesListActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        SvgLoader.pluck().close();
+        SvgLoader.pluck().close()
     }
 }
