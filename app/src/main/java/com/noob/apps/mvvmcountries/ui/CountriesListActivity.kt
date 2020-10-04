@@ -2,6 +2,7 @@ package com.noob.apps.mvvmcountries.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -42,6 +43,9 @@ class CountriesListActivity : AppCompatActivity() {
     private fun initializeObservers() {
         mViewModel.fetchCountriesFromServer(this, false).observe(this, Observer { kt ->
             mAdapter.setData(kt)
+        })
+        mViewModel.mShowApiError.observe(this, Observer {
+            AlertDialog.Builder(this).setMessage(it).show()
         })
         mViewModel.mShowProgressBar.observe(this, Observer { bt ->
             if (bt) {
