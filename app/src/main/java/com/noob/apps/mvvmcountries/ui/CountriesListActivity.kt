@@ -34,10 +34,12 @@ class CountriesListActivity : AppCompatActivity() {
     }
 
     private fun initializeRecyclerView() {
-        mActivityBinding.recyclerView.setHasFixedSize(true)
-        mActivityBinding.recyclerView.layoutManager = LinearLayoutManager(this)
         mAdapter = CountriesListAdapter(mViewModel.getCountriesList().value)
-        mActivityBinding.recyclerView.adapter = mAdapter
+        mActivityBinding.recyclerView.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context)
+            adapter = mAdapter
+        }
     }
 
     private fun initializeObservers() {
