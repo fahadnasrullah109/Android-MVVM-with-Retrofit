@@ -13,7 +13,7 @@ class CountryListViewModel : ViewModel() {
     private var mList: MutableLiveData<List<Country>> =
         MutableLiveData<List<Country>>().apply { value = emptyList() }
     val mShowProgressBar = MutableLiveData(true)
-    private var mShowNetworkError: MutableLiveData<Boolean> = MutableLiveData()
+    val mShowNetworkError: MutableLiveData<Boolean> = MutableLiveData()
     val mShowApiError = MutableLiveData<String>()
     private var mRepository = CountriesRepository.getInstance()
 

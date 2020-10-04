@@ -56,6 +56,9 @@ class CountriesListActivity : AppCompatActivity() {
                 mActivityBinding.floatingActionButton.show()
             }
         })
+        mViewModel.mShowNetworkError.observe(this, Observer {
+            AlertDialog.Builder(this).setMessage(R.string.app_no_internet_msg).show()
+        })
     }
 
     override fun onDestroy() {
