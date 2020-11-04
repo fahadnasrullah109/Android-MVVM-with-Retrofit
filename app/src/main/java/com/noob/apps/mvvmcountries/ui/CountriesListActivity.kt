@@ -2,6 +2,7 @@ package com.noob.apps.mvvmcountries.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -43,6 +44,9 @@ class CountriesListActivity : AppCompatActivity() {
         mViewModel.fetchCountriesFromServer(this, false).observe(this, Observer { kt ->
             mAdapter.setData(kt)
         })
+        mViewModel.mShowApiError.observe(this, Observer {
+            AlertDialog.Builder(this).setMessage(it).show()
+        })
         mViewModel.mShowProgressBar.observe(this, Observer { bt ->
             if (bt) {
                 mActivityBinding.progressBar.visibility = View.VISIBLE
@@ -51,6 +55,9 @@ class CountriesListActivity : AppCompatActivity() {
                 mActivityBinding.progressBar.visibility = View.GONE
                 mActivityBinding.floatingActionButton.show()
             }
+        })
+        mViewModel.mShowNetworkError.observe(this, Observer {
+            AlertDialog.Builder(this).setMessage(R.string.app_no_internet_msg).show()
         })
     }
 
