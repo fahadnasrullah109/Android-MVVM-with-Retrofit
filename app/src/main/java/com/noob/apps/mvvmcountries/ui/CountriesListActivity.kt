@@ -34,10 +34,12 @@ class CountriesListActivity : AppCompatActivity() {
     }
 
     private fun initializeRecyclerView() {
-        mActivityBinding.recyclerView.setHasFixedSize(true)
-        mActivityBinding.recyclerView.layoutManager = LinearLayoutManager(this)
-        mAdapter = CountriesListAdapter(mViewModel.getCountriesList().value)
-        mActivityBinding.recyclerView.adapter = mAdapter
+        mAdapter = CountriesListAdapter()
+        mActivityBinding.recyclerView.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context)
+            adapter = mAdapter
+        }
     }
 
     private fun initializeObservers() {
@@ -63,6 +65,6 @@ class CountriesListActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        SvgLoader.pluck().close();
+        SvgLoader.pluck().close()
     }
 }
