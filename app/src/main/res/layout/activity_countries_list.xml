@@ -49,6 +49,7 @@
             android:onClick="@{(v) -> viewModel.onRefreshClicked(v)}"
             android:src="@drawable/ic_refresh"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/refresh_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
