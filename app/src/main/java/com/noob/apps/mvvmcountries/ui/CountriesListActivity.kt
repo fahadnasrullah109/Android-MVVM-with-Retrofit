@@ -43,7 +43,7 @@ class CountriesListActivity : AppCompatActivity() {
     }
 
     private fun initializeObservers() {
-        mViewModel.fetchCountriesFromServer(this, false).observe(this, Observer { kt ->
+        mViewModel.fetchCountriesFromServer(false).observe(this, Observer { kt ->
             mAdapter.setData(kt)
         })
         mViewModel.mShowApiError.observe(this, Observer {
