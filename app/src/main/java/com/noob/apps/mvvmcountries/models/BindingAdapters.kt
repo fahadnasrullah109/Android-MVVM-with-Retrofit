@@ -15,6 +15,6 @@ object BindingAdapters {
                 com.noob.apps.mvvmcountries.R.mipmap.ic_launcher,
                 com.noob.apps.mvvmcountries.R.mipmap.ic_launcher
             )
-            .load(imageUrl, imageView);
+            .load(imageUrl, imageView)
     }
 }

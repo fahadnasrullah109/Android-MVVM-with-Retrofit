@@ -30,7 +30,7 @@ class CountriesRepository private constructor() {
 
     fun getCountries(callback: NetworkResponseCallback, forceFetch : Boolean): MutableLiveData<List<Country>> {
         mCallback = callback
-        if (!mCountryList.value!!.isEmpty() && !forceFetch) {
+        if (mCountryList.value!!.isNotEmpty() && !forceFetch) {
             mCallback.onNetworkSuccess()
             return mCountryList
         }

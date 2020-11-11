@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MVVMCountries</string>
     <string name="app_no_internet_msg">Internet connection is required!</string>
+    <string name="refresh_button">Refresh Button</string>
 </resources>

@@ -17,8 +17,6 @@ class CountryListViewModel : ViewModel() {
     val mShowApiError = MutableLiveData<String>()
     private var mRepository = CountriesRepository.getInstance()
 
-    fun getCountriesList() = mList
-
     fun fetchCountriesFromServer(context: Context, forceFetch : Boolean): MutableLiveData<List<Country>> {
         if (NetworkHelper.isOnline(context)) {
             mShowProgressBar.value = true

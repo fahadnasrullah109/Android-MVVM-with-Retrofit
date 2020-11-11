@@ -33,7 +33,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
-            android:inputType="textFilter"
             android:maxLines="1"
             android:minLines="1"
             android:text="@{country.name}"

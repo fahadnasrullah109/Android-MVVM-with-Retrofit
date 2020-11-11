@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 
 class RestClient private constructor() {
     companion object {
-        private val BASE_URL = "https://restcountries.eu/rest/v2/"
+        private const val BASE_URL = "https://restcountries.eu/rest/v2/"
         private lateinit var mApiServices: ApiServices
         private var mInstance: RestClient? = null
         fun getInstance(): RestClient {
@@ -23,11 +23,11 @@ class RestClient private constructor() {
     init {
         val okHttpClient = OkHttpClient().newBuilder().connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
-            .build();
+            .build()
         val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
-            .build();
+            .build()
         mApiServices = retrofit.create(ApiServices::class.java)
     }
 
