@@ -12,6 +12,7 @@ This is sample project to express how to use Android MVVP architecture.
 - Refreshing data
 - Kotlin language
 - Loads list of countries using [restcountries](https://restcountries.eu/) restful api.
+- Apis deprecated
 
 ### Demo
 
