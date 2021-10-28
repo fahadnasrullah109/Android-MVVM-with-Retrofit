@@ -14,6 +14,9 @@ import com.noob.apps.mvvmcountries.adapters.CountriesListAdapter
 import com.noob.apps.mvvmcountries.databinding.ActivityCountriesListBinding
 import com.noob.apps.mvvmcountries.viewmodels.CountryListViewModel
 
+/**
+ * @author Fahad Nasrullah
+ */
 class CountriesListActivity : AppCompatActivity() {
     private lateinit var mAdapter: CountriesListAdapter
     private lateinit var mViewModel: CountryListViewModel
